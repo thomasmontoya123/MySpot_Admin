@@ -8,11 +8,16 @@ class Admin extends StatefulWidget {
 
 class _AdminState extends State<Admin> {
 
+  int _carTotalCells = 100;
+  int _bikeTotalCells = 200;
   int _carCellsAvailable = 100;
-  int _bikeCellsAvailable = 100;
+  int _bikeCellsAvailable = 200;
+
+  //  on production => we will get this info from the API --> just for testing <--
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         leading: null,
@@ -28,6 +33,17 @@ class _AdminState extends State<Admin> {
             _carCard(),
             SizedBox(height: 100.0),
             _bikeCard(),
+            SizedBox(height: 25.0),
+            RaisedButton(
+              elevation: 105.0,
+              child: Text('Books'),
+              textColor: Colors.white,
+              color: Colors.blueGrey,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0)
+              ),
+              onPressed: () => Navigator.pushNamed(context, '/books')
+            )
           ],
         ),
       )
@@ -56,7 +72,9 @@ class _AdminState extends State<Admin> {
                 child: Icon(Icons.exposure_plus_1, color: Colors.blue),
                 onPressed: () {
                   setState(() {
-                  _carCellsAvailable++;
+                    if (_carCellsAvailable < _carTotalCells){
+                      _carCellsAvailable++;
+                    }
                   });
 
                 },
@@ -98,9 +116,10 @@ class _AdminState extends State<Admin> {
                 child: Icon(Icons.exposure_plus_1, color: Colors.blue),
                 onPressed: () {
                   setState(() {
-                  _bikeCellsAvailable++;
+                    if (_bikeCellsAvailable < _bikeTotalCells){
+                      _bikeCellsAvailable++;
+                    }
                   });
-
                 },
               ),
               FlatButton(
