@@ -1,3 +1,7 @@
+// This page displays the books
+// Allows the user to accept the books or not
+
+
 import 'package:flutter/material.dart';
 
 class Books extends StatefulWidget {

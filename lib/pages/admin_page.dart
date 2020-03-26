@@ -1,3 +1,6 @@
+// Parking lot admin page 
+// Allows the admin to change the parking lot info
+
 import 'package:flutter/material.dart';
 
 
@@ -53,6 +56,8 @@ class _AdminState extends State<Admin> {
 
 
   Widget _carCard() {
+    // Hanldes the car cells info 
+
     return Card(
       elevation: 25.0,
       shape: RoundedRectangleBorder(
@@ -97,6 +102,7 @@ class _AdminState extends State<Admin> {
   }
 
   _bikeCard() {
+    // Handles the motorcycles cells info
     return Card(
       elevation: 25.0,
       shape: RoundedRectangleBorder(

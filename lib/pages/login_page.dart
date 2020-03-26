@@ -1,3 +1,6 @@
+// Allows the user to login in the app 
+
+
 import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:flutter/material.dart';
